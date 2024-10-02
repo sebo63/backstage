@@ -72,7 +72,7 @@ export const createGitlabProjectAccessTokenAction = (options: {
         access_token: z.string({ description: 'Access Token' }),
       }),
     },
-    async handler(ctx) {
+    handler: async function (ctx) {
       ctx.logger.info(`Creating Token for Project "${ctx.input.projectId}"`);
       const {
         projectId,
@@ -104,13 +104,24 @@ export const createGitlabProjectAccessTokenAction = (options: {
         });
       }
 
+      // gitbeaker introduced breaking change, expiresAt now outside of options
+      // const response = await api.ProjectAccessTokens.create(
+      //   projectId,
+      //   name,
+      //   scopes as AccessTokenScopes[],
+      //   {
+      //     expiresAt:
+      //       expiresAt || DateTime.now().plus({ days: 365 }).toISODate()!,
+      //     accessLevel,
+      //   },
+      // );
       const response = await api.ProjectAccessTokens.create(
         projectId,
         name,
         scopes as AccessTokenScopes[],
+        (expiresAt ||
+          DateTime.now().plus({ days: 365 }).toISODate()!) as string,
         {
-          expiresAt:
-            expiresAt || DateTime.now().plus({ days: 365 }).toISODate()!,
           accessLevel,
         },
       );

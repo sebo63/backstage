@@ -20,7 +20,7 @@ import {
   SerializedFile,
   serializeDirectoryContents,
 } from '@backstage/plugin-scaffolder-node';
-import { Types } from '@gitbeaker/core';
+import { RepositoryTreeSchema, CommitAction } from '@gitbeaker/core';
 import path from 'path';
 import { ScmIntegrationRegistry } from '@backstage/integration';
 import { InputError } from '@backstage/errors';
@@ -30,7 +30,7 @@ import { examples } from './gitlabMergeRequest.examples';
 
 function getFileAction(
   fileInfo: { file: SerializedFile; targetPath: string | undefined },
-  remoteFiles: Types.RepositoryTreeSchema[],
+  remoteFiles: RepositoryTreeSchema[],
   defaultCommitAction: 'create' | 'delete' | 'update' | 'auto' | undefined,
 ): 'create' | 'delete' | 'update' {
   if (!defaultCommitAction || defaultCommitAction === 'auto') {
@@ -192,7 +192,8 @@ export const createPublishGitlabMergeRequestAction = (options: {
 
       if (assignee !== undefined) {
         try {
-          const assigneeUser = await api.Users.username(assignee);
+          // const assigneeUser = await api.Users.username(assignee);   // this function disappeared from gitbeaker in 37.0.0
+          const assigneeUser = await api.Users.all({ username: assignee });
           assigneeId = assigneeUser[0].id;
         } catch (e) {
           ctx.logger.warn(
@@ -223,10 +224,17 @@ export const createPublishGitlabMergeRequestAction = (options: {
         targetBranch = defaultBranch!;
       }
 
-      let remoteFiles: Types.RepositoryTreeSchema[] = [];
+      let remoteFiles: RepositoryTreeSchema[] = [];
       if (!ctx.input.commitAction || ctx.input.commitAction === 'auto') {
         try {
-          remoteFiles = await api.Repositories.tree(repoID, {
+          // Repositories.tree disappeared from gitbeaker in 37.0
+          // remoteFiles = await api.Repositories.tree(repoID, {
+          //   ref: targetBranch,
+          //   recursive: true,
+          //   path: targetPath ?? undefined,
+          // });
+
+          remoteFiles = await api.Repositories.allRepositoryTrees(repoID, {
             ref: targetBranch,
             recursive: true,
             path: targetPath ?? undefined,
@@ -238,7 +246,7 @@ export const createPublishGitlabMergeRequestAction = (options: {
         }
       }
 
-      const actions: Types.CommitAction[] = fileContents.map(file => ({
+      const actions: CommitAction[] = fileContents.map(file => ({
         action: getFileAction(
           { file, targetPath },
           remoteFiles,

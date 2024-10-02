@@ -16,8 +16,7 @@
 
 import { ScmIntegrationRegistry } from '@backstage/integration';
 import { createTemplateAction } from '@backstage/plugin-scaffolder-node';
-import { GroupSchema } from '@gitbeaker/core/dist/types/resources/Groups';
-import { Gitlab } from '@gitbeaker/node';
+import { GroupSchema, Gitlab } from '@gitbeaker/core';
 import { z } from 'zod';
 import commonGitlabConfig from '../commonGitlabConfig';
 import { getToken } from '../util';
@@ -87,7 +86,7 @@ export const createGitlabGroupEnsureExistsAction = (options: {
             pathElement,
             parent
               ? {
-                  parent_id: parent.id,
+                  parentId: parent.id,
                 }
               : {},
           );

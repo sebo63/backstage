@@ -15,15 +15,15 @@
  */
 import { parseRepoUrl } from '@backstage/plugin-scaffolder-node';
 import { InputError } from '@backstage/errors';
-import { Gitlab } from '@gitbeaker/node';
+// import { Gitlab } from '@gitbeaker/node';
 import { ScmIntegrationRegistry } from '@backstage/integration';
-import { Resources } from '@gitbeaker/core';
+import { Gitlab } from '@gitbeaker/core';
 
 export function createGitlabApi(options: {
   integrations: ScmIntegrationRegistry;
   token?: string;
   repoUrl: string;
-}): Resources.Gitlab {
+}): Gitlab {
   const { integrations, token: providedToken, repoUrl } = options;
 
   const { host } = parseRepoUrl(repoUrl, integrations);
