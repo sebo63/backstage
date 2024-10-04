@@ -20,7 +20,7 @@ import {
   SerializedFile,
   serializeDirectoryContents,
 } from '@backstage/plugin-scaffolder-node';
-import { RepositoryTreeSchema, CommitAction } from '@gitbeaker/core';
+import { RepositoryTreeSchema, CommitAction } from '@gitbeaker/rest';
 import path from 'path';
 import { ScmIntegrationRegistry } from '@backstage/integration';
 import { InputError } from '@backstage/errors';

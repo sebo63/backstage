@@ -18,7 +18,7 @@ import { InputError } from '@backstage/errors';
 import { ScmIntegrationRegistry } from '@backstage/integration';
 import { createTemplateAction } from '@backstage/plugin-scaffolder-node';
 import { DeployTokenScope } from '@gitbeaker/core';
-import { Gitlab } from '@gitbeaker/node';
+import { Gitlab } from '@gitbeaker/rest';
 import { z } from 'zod';
 import commonGitlabConfig from '../commonGitlabConfig';
 import { getToken } from '../util';

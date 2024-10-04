@@ -53,20 +53,22 @@ const mockGitlabClient = {
   },
   Users: {
     current: jest.fn(),
-    username: jest.fn(async (user: string) => {
+    all: jest.fn(async (userOptions: { username: string }) => {
       const users: string[] = ['John Smith', 'my-assignee'];
-      if (!users.includes(user)) throw new Error('user does not exist');
-      else
+      if (!users.includes(userOptions.username)) {
+        throw new Error('user does not exist');
+      } else {
         return [
           {
             id: 123,
           },
         ];
+      }
     }),
   },
 };
 
-jest.mock('@gitbeaker/node', () => ({
+jest.mock('@gitbeaker/rest', () => ({
   Gitlab: class {
     constructor() {
       return mockGitlabClient;

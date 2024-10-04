@@ -25,7 +25,7 @@ const mockGitlabClient = {
     create: jest.fn(),
   },
 };
-jest.mock('@gitbeaker/node', () => ({
+jest.mock('@gitbeaker/rest', () => ({
   Gitlab: class {
     constructor() {
       return mockGitlabClient;
@@ -81,7 +81,7 @@ describe('gitlab:group:ensureExists', () => {
     });
 
     expect(mockGitlabClient.Groups.create).toHaveBeenCalledWith('bar', 'bar', {
-      parent_id: 2,
+      parentId: 2,
     });
 
     expect(mockContext.output).toHaveBeenCalledWith('groupId', 3);

@@ -48,7 +48,7 @@ const mockGitlabClient = {
     add: jest.fn(),
   },
 };
-jest.mock('@gitbeaker/node', () => ({
+jest.mock('@gitbeaker/rest', () => ({
   Gitlab: class {
     constructor() {
       return mockGitlabClient;
