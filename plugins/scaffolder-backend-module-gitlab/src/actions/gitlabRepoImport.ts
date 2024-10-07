@@ -26,7 +26,7 @@ import { MigrationEntityOptions } from '@gitbeaker/core';
  *
  * @public
  */
-export const createGitlabRepoImportAction = (options: {
+export const createGitlabRepoImport = (options: {
   integrations: ScmIntegrationRegistry;
 }) => {
   const { integrations } = options;
