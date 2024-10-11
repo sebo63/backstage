@@ -18,56 +18,22 @@ import yaml from 'yaml';
 
 export const examples: TemplateExample[] = [
   {
-    description: 'Push changes to gitlab repository with minimal changes',
+    description: 'Import repo from remote GitLab instance',
     example: yaml.stringify({
       steps: [
         {
-          id: 'pushChanges',
+          id: 'importGitLabRepo',
           action: 'gitlab:repo:push',
           name: 'Push changes to gitlab repository',
           input: {
-            repoUrl: 'gitlab.com?repo=repo&owner=owner',
-            commitMessage: 'Initial Commit',
-            branchName: 'feature-branch',
-          },
-        },
-      ],
-    }),
-  },
-  {
-    description:
-      'Push changes to gitlab repository with a specific source and target path',
-    example: yaml.stringify({
-      steps: [
-        {
-          id: 'pushChanges',
-          action: 'gitlab:repo:push',
-          name: 'Push changes to gitlab repository',
-          input: {
-            repoUrl: 'gitlab.com?repo=repo&owner=owner',
-            commitMessage: 'Initial Commit',
-            branchName: 'feature-branch',
-            sourcePath: 'src',
-            targetPath: 'dest',
-          },
-        },
-      ],
-    }),
-  },
-  {
-    description:
-      'Push changes to gitlab repository with a specific commit action',
-    example: yaml.stringify({
-      steps: [
-        {
-          id: 'pushChanges',
-          action: 'gitlab:repo:push',
-          name: 'Push changes to gitlab repository',
-          input: {
-            repoUrl: 'gitlab.com?repo=repo&owner=owner',
-            commitMessage: 'Initial Commit',
-            branchName: 'feature-branch',
-            commitAction: 'update',
+            sourceRepoUrl: 'https://gitlab.remote.com',
+            sourceRepoAccessToken: 'lolstoken',
+            targetRepoUrl: 'gitlab.local.com',
+            targetRepoAccessToken: 'tokenslols',
+            sourceFullPath: 'my/wonderfull-repo',
+            sourceType: 'project_entity',
+            destinationSlug: 'precious-repo',
+            destinationNamespace: 'my/local/site',
           },
         },
       ],

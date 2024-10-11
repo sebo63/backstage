@@ -14,18 +14,53 @@
  * limitations under the License.
  */
 
-import { createTemplateAction } from '@backstage/plugin-scaffolder-node';
+import {
+  createTemplateAction,
+  // parseRepoUrl
+} from '@backstage/plugin-scaffolder-node';
 import { ScmIntegrationRegistry } from '@backstage/integration';
 import { InputError } from '@backstage/errors';
-import { createGitlabApi } from './helpers';
+// import { createGitlabApi } from './helpers';
 import { examples } from './gitlabRepoPush.examples';
 import { MigrationEntityOptions } from '@gitbeaker/core';
+import { Gitlab } from '@gitbeaker/rest';
 
 /**
  * Create a new action that imports a gitlab repository into another gitlab repository.
  *
  * @public
  */
+
+function createGitlabApi(options: {
+  integrations: ScmIntegrationRegistry;
+  token?: string;
+  repoUrl: string;
+}) {
+  const { integrations, token: providedToken, repoUrl } = options;
+
+  const host = new URL(`https://${repoUrl}`).host;
+
+  const integrationConfig = integrations.gitlab.byHost(host);
+
+  if (!integrationConfig) {
+    throw new InputError(
+      `No matching integration configuration for host ${host}, please check your integrations config`,
+    );
+  }
+
+  if (!integrationConfig.config.token && !providedToken) {
+    throw new InputError(`No token available for host ${host}`);
+  }
+
+  const token = providedToken ?? integrationConfig.config.token!;
+  const tokenType = providedToken ? 'oauthToken' : 'token';
+
+  return new Gitlab({
+    host: integrationConfig.config.baseUrl,
+    [tokenType]: token,
+  });
+}
+
 export const createGitlabRepoImport = (options: {
   integrations: ScmIntegrationRegistry;
 }) => {
@@ -114,6 +149,7 @@ export const createGitlabRepoImport = (options: {
         },
       },
     },
+
     async handler(ctx) {
       const {
         sourceRepoUrl,
@@ -158,9 +194,7 @@ export const createGitlabRepoImport = (options: {
         }
       }
 
-      // ctx.output('projectid', repoID);
-      // ctx.output('projectPath', repoID);
-      // ctx.output('commitHash', commit.id);
+      ctx.output('importedRepoUrl', sourceFullPath);
     },
   });
 };

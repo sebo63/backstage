@@ -19,6 +19,7 @@ import { ScmIntegrations } from '@backstage/integration';
 import { TemplateAction } from '@backstage/plugin-scaffolder-node';
 import { createGitlabRepoImport } from './gitlabRepoImport';
 import { createMockActionContext } from '@backstage/plugin-scaffolder-node-test-utils';
+import { createMockDirectory } from '@backstage/backend-test-utils';
 
 // Make sure root logger is initialized ahead of FS mock
 createRootLogger();
@@ -64,6 +65,8 @@ describe('createGitlabRepoImport', () => {
   });
 
   describe('createGitlabRepoImport', () => {
+    const workspacePath = createMockDirectory().resolve('workspace');
+
     it('default repo import action is created', async () => {
       const input = {
         sourceRepoUrl: 'https://gitlab.remote.com',
@@ -75,7 +78,7 @@ describe('createGitlabRepoImport', () => {
         destinationSlug: 'migrated-go-lang',
         destinationNamespace: 'migrated/foo/bar',
       };
-      const ctx = createMockActionContext({ input });
+      const ctx = createMockActionContext({ input, workspacePath });
       await instance.handler(ctx);
 
       expect(mockGitlabClient.Migrations.create).toHaveBeenCalledWith(
