@@ -17,7 +17,7 @@ import { createRootLogger } from '@backstage/backend-common';
 import { ConfigReader } from '@backstage/config';
 import { ScmIntegrations } from '@backstage/integration';
 import { TemplateAction } from '@backstage/plugin-scaffolder-node';
-import { createGitlabRepoImport } from './gitlabRepoImport';
+import { createGitlabRepoImportAction } from './gitlabRepoImport';
 import { createMockActionContext } from '@backstage/plugin-scaffolder-node-test-utils';
 import { createMockDirectory } from '@backstage/backend-test-utils';
 import { examples } from './gitlabRepoImport.examples';
@@ -63,7 +63,7 @@ describe('createGitlabRepoImport', () => {
     });
 
     const integrations = ScmIntegrations.fromConfig(config);
-    instance = createGitlabRepoImport({ integrations });
+    instance = createGitlabRepoImportAction({ integrations });
   });
 
   describe('createGitlabRepoImport', () => {

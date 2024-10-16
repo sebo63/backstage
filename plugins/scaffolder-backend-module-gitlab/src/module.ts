@@ -25,13 +25,13 @@ import {
   createGitlabProjectAccessTokenAction,
   createGitlabProjectDeployTokenAction,
   createGitlabProjectVariableAction,
+  createGitlabRepoImportAction,
   createGitlabRepoPushAction,
   createPublishGitlabAction,
   createPublishGitlabMergeRequestAction,
   createTriggerGitlabPipelineAction,
   editGitlabIssueAction,
 } from './actions';
-
 /**
  * @public
  * The GitLab Module for the Scaffolder Backend
@@ -54,6 +54,7 @@ export const gitlabModule = createBackendModule({
           createGitlabProjectAccessTokenAction({ integrations }),
           createGitlabProjectDeployTokenAction({ integrations }),
           createGitlabProjectVariableAction({ integrations }),
+          createGitlabRepoImportAction({ integrations }),
           createGitlabRepoPushAction({ integrations }),
           editGitlabIssueAction({ integrations }),
           createPublishGitlabAction({ config, integrations }),

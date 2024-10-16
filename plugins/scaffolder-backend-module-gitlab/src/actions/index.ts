@@ -22,5 +22,6 @@ export * from './gitlabPipelineTrigger';
 export * from './gitlabProjectAccessTokenCreate';
 export * from './gitlabProjectDeployTokenCreate';
 export * from './gitlabProjectVariableCreate';
+export * from './gitlabRepoImport';
 export * from './gitlabRepoPush';
 export { IssueType, IssueStateEvent } from '../commonGitlabConfig';

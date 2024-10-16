@@ -61,7 +61,7 @@ function createGitlabApi(options: {
   });
 }
 
-export const createGitlabRepoImport = (options: {
+export const createGitlabRepoImportAction = (options: {
   integrations: ScmIntegrationRegistry;
 }) => {
   const { integrations } = options;
