@@ -1,5 +1,19 @@
 # @backstage/plugin-search-react
 
+## 1.8.0-next.3
+
+### Patch Changes
+
+- a159180: Added missing items to `overridableComponents`
+- Updated dependencies
+  - @backstage/core-components@0.15.0-next.2
+  - @backstage/frontend-plugin-api@0.8.0-next.3
+  - @backstage/core-plugin-api@1.9.4-next.0
+  - @backstage/theme@0.5.7-next.0
+  - @backstage/types@1.1.1
+  - @backstage/version-bridge@1.0.9-next.0
+  - @backstage/plugin-search-common@1.2.14
+
 ## 1.8.0-next.2
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @backstage/catalog-client
 
+## 1.7.0-next.2
+
+### Minor Changes
+
+- 29e57c7: Add catalog service mocks under the `/testUtils` subpath export.
+
+### Patch Changes
+
+- Updated dependencies
+  - @backstage/catalog-model@1.6.0
+  - @backstage/errors@1.2.4
+
 ## 1.7.0-next.1
 
 ### Minor Changes

@@ -1,5 +1,22 @@
 # @backstage/plugin-search
 
+## 1.4.16-next.3
+
+### Patch Changes
+
+- eca03bd: Added ability to customize the search items within the SidebarSearchModal
+- Updated dependencies
+  - @backstage/core-components@0.15.0-next.2
+  - @backstage/frontend-plugin-api@0.8.0-next.3
+  - @backstage/plugin-catalog-react@1.13.0-next.3
+  - @backstage/plugin-search-react@1.8.0-next.3
+  - @backstage/core-compat-api@0.3.0-next.3
+  - @backstage/core-plugin-api@1.9.4-next.0
+  - @backstage/errors@1.2.4
+  - @backstage/types@1.1.1
+  - @backstage/version-bridge@1.0.9-next.0
+  - @backstage/plugin-search-common@1.2.14
+
 ## 1.4.16-next.2
 
 ### Patch Changes

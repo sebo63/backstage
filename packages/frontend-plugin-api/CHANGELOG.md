@@ -1,5 +1,16 @@
 # @backstage/frontend-plugin-api
 
+## 0.8.0-next.3
+
+### Patch Changes
+
+- 220f4f7: Remove unnecessary config object on IconBundleBlueprint
+- Updated dependencies
+  - @backstage/core-components@0.15.0-next.2
+  - @backstage/core-plugin-api@1.9.4-next.0
+  - @backstage/types@1.1.1
+  - @backstage/version-bridge@1.0.9-next.0
+
 ## 0.8.0-next.2
 
 ### Patch Changes

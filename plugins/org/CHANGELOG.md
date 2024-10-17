@@ -1,5 +1,19 @@
 # @backstage/plugin-org
 
+## 0.6.29-next.3
+
+### Patch Changes
+
+- a159180: Added missing items to `overridableComponents`
+- Updated dependencies
+  - @backstage/plugin-catalog-common@1.1.0-next.0
+  - @backstage/core-components@0.15.0-next.2
+  - @backstage/frontend-plugin-api@0.8.0-next.3
+  - @backstage/plugin-catalog-react@1.13.0-next.3
+  - @backstage/core-compat-api@0.3.0-next.3
+  - @backstage/catalog-model@1.6.0
+  - @backstage/core-plugin-api@1.9.4-next.0
+
 ## 0.6.29-next.2
 
 ### Patch Changes

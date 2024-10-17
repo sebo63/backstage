@@ -1,5 +1,19 @@
 # @backstage/core-app-api
 
+## 1.15.0-next.1
+
+### Minor Changes
+
+- ddbeace: Added the ability to explicitly disable routes through the `bindRoutes` option by passing `false` as the route target. This also fixes a bug where route bindings in config were incorrectly prioritized above the ones in code in certain situations.
+
+### Patch Changes
+
+- Updated dependencies
+  - @backstage/config@1.2.0
+  - @backstage/core-plugin-api@1.9.4-next.0
+  - @backstage/types@1.1.1
+  - @backstage/version-bridge@1.0.9-next.0
+
 ## 1.14.3-next.0
 
 ### Patch Changes

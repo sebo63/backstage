@@ -1,5 +1,22 @@
 # @backstage/backend-common
 
+## 0.25.0-next.3
+
+### Patch Changes
+
+- 82539fe: Updated dependency `archiver` to `^7.0.0`.
+- Updated dependencies
+  - @backstage/plugin-auth-node@0.5.2-next.3
+  - @backstage/backend-dev-utils@0.1.5
+  - @backstage/backend-plugin-api@1.0.0-next.3
+  - @backstage/cli-common@0.1.14
+  - @backstage/config@1.2.0
+  - @backstage/config-loader@1.9.1-next.0
+  - @backstage/errors@1.2.4
+  - @backstage/integration@1.15.0-next.0
+  - @backstage/integration-aws-node@0.1.12
+  - @backstage/types@1.1.1
+
 ## 0.25.0-next.2
 
 ### Patch Changes

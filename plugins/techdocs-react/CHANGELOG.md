@@ -1,5 +1,16 @@
 # @backstage/plugin-techdocs-react
 
+## 1.2.8-next.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @backstage/core-components@0.15.0-next.2
+  - @backstage/catalog-model@1.6.0
+  - @backstage/config@1.2.0
+  - @backstage/core-plugin-api@1.9.4-next.0
+  - @backstage/version-bridge@1.0.9-next.0
+
 ## 1.2.8-next.2
 
 ### Patch Changes

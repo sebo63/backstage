@@ -1,5 +1,21 @@
 # @backstage/frontend-app-api
 
+## 0.9.0-next.3
+
+### Patch Changes
+
+- 0c70949: Reverse the order of API factory initialization in order to make sure that overrides from modules take priority
+- ddbeace: Added the ability to explicitly disable routes through the `bindRoutes` option by passing `false` as the route target. This also fixes a bug where route bindings in config were incorrectly prioritized above the ones in code in certain situations.
+- Updated dependencies
+  - @backstage/core-app-api@1.15.0-next.1
+  - @backstage/frontend-plugin-api@0.8.0-next.3
+  - @backstage/frontend-defaults@0.1.0-next.2
+  - @backstage/config@1.2.0
+  - @backstage/core-plugin-api@1.9.4-next.0
+  - @backstage/errors@1.2.4
+  - @backstage/types@1.1.1
+  - @backstage/version-bridge@1.0.9-next.0
+
 ## 0.9.0-next.2
 
 ### Patch Changes

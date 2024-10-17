@@ -1,5 +1,35 @@
 # @backstage/plugin-techdocs
 
+## 1.10.9-next.3
+
+### Patch Changes
+
+- b0206dc: Added support for setting page status with 'new' and 'deprecated' values, allowing visual indication of page status in TechDocs. To use include the following at the top of your markdown file:
+
+  ```markdown
+  ---
+  status: new
+  ---
+  ```
+
+- Updated dependencies
+  - @backstage/core-components@0.15.0-next.2
+  - @backstage/frontend-plugin-api@0.8.0-next.3
+  - @backstage/plugin-catalog-react@1.13.0-next.3
+  - @backstage/plugin-search-react@1.8.0-next.3
+  - @backstage/core-compat-api@0.3.0-next.3
+  - @backstage/catalog-model@1.6.0
+  - @backstage/config@1.2.0
+  - @backstage/core-plugin-api@1.9.4-next.0
+  - @backstage/errors@1.2.4
+  - @backstage/integration@1.15.0-next.0
+  - @backstage/integration-react@1.1.31-next.0
+  - @backstage/theme@0.5.7-next.0
+  - @backstage/plugin-auth-react@0.1.6-next.2
+  - @backstage/plugin-search-common@1.2.14
+  - @backstage/plugin-techdocs-common@0.1.0
+  - @backstage/plugin-techdocs-react@1.2.8-next.3
+
 ## 1.10.9-next.2
 
 ### Patch Changes

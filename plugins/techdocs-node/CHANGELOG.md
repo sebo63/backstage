@@ -1,5 +1,20 @@
 # @backstage/plugin-techdocs-node
 
+## 1.12.11-next.3
+
+### Patch Changes
+
+- f715f5c: Move `TechdocsContainerRunner` from `publish` to `generate`.
+- Updated dependencies
+  - @backstage/backend-plugin-api@1.0.0-next.3
+  - @backstage/catalog-model@1.6.0
+  - @backstage/config@1.2.0
+  - @backstage/errors@1.2.4
+  - @backstage/integration@1.15.0-next.0
+  - @backstage/integration-aws-node@0.1.12
+  - @backstage/plugin-search-common@1.2.14
+  - @backstage/plugin-techdocs-common@0.1.0
+
 ## 1.12.11-next.2
 
 ### Patch Changes

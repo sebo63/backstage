@@ -1,5 +1,17 @@
 # @backstage/plugin-auth-backend-module-guest-provider
 
+## 0.2.0-next.3
+
+### Patch Changes
+
+- 339c67d: This provider will now reject authentication attempts rather than halt backend startup when `dangerouslyAllowOutsideDevelopment` is not set in production.
+- Updated dependencies
+  - @backstage/backend-common@0.25.0-next.3
+  - @backstage/plugin-auth-node@0.5.2-next.3
+  - @backstage/backend-plugin-api@1.0.0-next.3
+  - @backstage/catalog-model@1.6.0
+  - @backstage/errors@1.2.4
+
 ## 0.2.0-next.2
 
 ### Patch Changes

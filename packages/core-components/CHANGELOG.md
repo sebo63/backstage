@@ -1,5 +1,22 @@
 # @backstage/core-components
 
+## 0.15.0-next.2
+
+### Minor Changes
+
+- 9adc552: Added missing items to `overridableComponents`
+
+  **BREAKING** Overridable component name for styling `OAuthRequestDialog` changed to `BackstageOAuthRequestDialog`. Overridable component name `BackstageMissingAnnotationEmptyState` that was previously deprecated has been removed.
+
+### Patch Changes
+
+- Updated dependencies
+  - @backstage/config@1.2.0
+  - @backstage/core-plugin-api@1.9.4-next.0
+  - @backstage/errors@1.2.4
+  - @backstage/theme@0.5.7-next.0
+  - @backstage/version-bridge@1.0.9-next.0
+
 ## 0.14.11-next.1
 
 ### Patch Changes

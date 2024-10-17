@@ -1,5 +1,14 @@
 # @backstage/plugin-auth-backend-module-auth0-provider
 
+## 0.1.0-next.1
+
+### Patch Changes
+
+- 0a3a13e: Updated dependency `supertest` to `^7.0.0`.
+- Updated dependencies
+  - @backstage/plugin-auth-node@0.5.2-next.3
+  - @backstage/backend-plugin-api@1.0.0-next.3
+
 ## 0.1.0-next.0
 
 ### Minor Changes

@@ -1,5 +1,23 @@
 # @backstage/cli
 
+## 0.27.1-next.3
+
+### Patch Changes
+
+- ab7713a: Updated dependency `eslint-plugin-jest` to `^28.0.0`.
+- c78ff91: Updated dependency `@rollup/plugin-commonjs` to `^26.0.0`.
+- Updated dependencies
+  - @backstage/catalog-model@1.6.0
+  - @backstage/cli-common@0.1.14
+  - @backstage/cli-node@0.2.8-next.0
+  - @backstage/config@1.2.0
+  - @backstage/config-loader@1.9.1-next.0
+  - @backstage/errors@1.2.4
+  - @backstage/eslint-plugin@0.1.9-next.0
+  - @backstage/integration@1.15.0-next.0
+  - @backstage/release-manifests@0.0.11
+  - @backstage/types@1.1.1
+
 ## 0.27.1-next.2
 
 ### Patch Changes

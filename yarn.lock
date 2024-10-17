@@ -3861,6 +3861,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@backstage/catalog-model@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "@backstage/catalog-model@npm:1.7.0"
+  dependencies:
+    "@backstage/errors": ^1.2.4
+    "@backstage/types": ^1.1.1
+    ajv: ^8.10.0
+    lodash: ^4.17.21
+  checksum: 6ff537e9e6064d35fa4a173a1c96f94e904489494a67a136e2dd0a743f9e3f4fd8a1f7a661fe8495dfbb642aabcc8fbf1746a300ad496b6e4a5d02f4db00f914
+  languageName: node
+  linkType: hard
+
 "@backstage/cli-common@workspace:^, @backstage/cli-common@workspace:packages/cli-common":
   version: 0.0.0-use.local
   resolution: "@backstage/cli-common@workspace:packages/cli-common"
@@ -5818,7 +5830,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@backstage/plugin-catalog-common@^1.0.20, @backstage/plugin-catalog-common@^1.0.26, @backstage/plugin-catalog-common@workspace:^, @backstage/plugin-catalog-common@workspace:plugins/catalog-common":
+"@backstage/plugin-catalog-common@npm:^1.0.20, @backstage/plugin-catalog-common@npm:^1.0.26":
+  version: 1.1.0
+  resolution: "@backstage/plugin-catalog-common@npm:1.1.0"
+  dependencies:
+    "@backstage/catalog-model": ^1.7.0
+    "@backstage/plugin-permission-common": ^0.8.1
+    "@backstage/plugin-search-common": ^1.2.14
+  checksum: 291a589cfa6d6d06dbb01d6343c005f4dad1d837b3f2d56ce7d0f1cb89b90c92af4e1dd17931cdcd2b6666b11eba0f8726f9fe02bca2340997002b2182cdf40b
+  languageName: node
+  linkType: hard
+
+"@backstage/plugin-catalog-common@workspace:^, @backstage/plugin-catalog-common@workspace:plugins/catalog-common":
   version: 0.0.0-use.local
   resolution: "@backstage/plugin-catalog-common@workspace:plugins/catalog-common"
   dependencies:
@@ -7644,7 +7667,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@backstage/plugin-search-common@workspace:^, @backstage/plugin-search-common@workspace:plugins/search-common":
+"@backstage/plugin-search-common@^1.2.14, @backstage/plugin-search-common@workspace:^, @backstage/plugin-search-common@workspace:plugins/search-common":
   version: 0.0.0-use.local
   resolution: "@backstage/plugin-search-common@workspace:plugins/search-common"
   dependencies:

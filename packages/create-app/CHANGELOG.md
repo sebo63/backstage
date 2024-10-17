@@ -1,5 +1,13 @@
 # @backstage/create-app
 
+## 0.5.19-next.3
+
+### Patch Changes
+
+- 4975e63: Yarn 4 is now the default for `create-app`. Also updated `yarn dev` script to use `yarn workspaces foreach` and removed unused Lerna and Concurrently dependencies.
+- Updated dependencies
+  - @backstage/cli-common@0.1.14
+
 ## 0.5.19-next.2
 
 ### Patch Changes
